@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: ./app/libs/android-stateful-layout-base-release.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4b8add9c278a65b3b338daab2a505977/transformed/jetified-android-stateful-layout-base-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4b8add9c278a65b3b338daab2a505977/transformed/jetified-android-stateful-layout-base-release/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4b8add9c278a65b3b338daab2a505977/transformed/jetified-android-stateful-layout-base-release/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
