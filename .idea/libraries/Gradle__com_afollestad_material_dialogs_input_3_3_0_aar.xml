@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.afollestad.material-dialogs:input:3.3.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/df24ae5a7e7f208f2d481e66d9aed8a3/transformed/jetified-input-3.3.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/df24ae5a7e7f208f2d481e66d9aed8a3/transformed/jetified-input-3.3.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/df24ae5a7e7f208f2d481e66d9aed8a3/transformed/jetified-input-3.3.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8d3a2d4202cf4ab7250765812c2d8d22/transformed/jetified-input-3.3.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8d3a2d4202cf4ab7250765812c2d8d22/transformed/jetified-input-3.3.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8d3a2d4202cf4ab7250765812c2d8d22/transformed/jetified-input-3.3.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.afollestad.material-dialogs/input/3.3.0/9981511576fca2c01f51b58703337c5475b3e64a/input-3.3.0-javadoc.jar!/" />

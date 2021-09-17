@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.afollestad.material-dialogs:bottomsheets:3.3.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/225ed9cfab43425b1ff911daf2df5590/transformed/jetified-bottomsheets-3.3.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/225ed9cfab43425b1ff911daf2df5590/transformed/jetified-bottomsheets-3.3.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/225ed9cfab43425b1ff911daf2df5590/transformed/jetified-bottomsheets-3.3.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/55d0030f5152426affc00f48482de966/transformed/jetified-bottomsheets-3.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/55d0030f5152426affc00f48482de966/transformed/jetified-bottomsheets-3.3.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/55d0030f5152426affc00f48482de966/transformed/jetified-bottomsheets-3.3.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.afollestad.material-dialogs/bottomsheets/3.3.0/39aac49eb3baf4115938e56ef7cc7b404aec772a/bottomsheets-3.3.0-javadoc.jar!/" />

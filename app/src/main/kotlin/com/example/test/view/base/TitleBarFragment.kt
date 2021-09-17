@@ -11,7 +11,7 @@ import com.example.test.view.exts.goBack
 import kotlinx.android.synthetic.main.fragment_title_bar.view.*
 import kotlinx.android.synthetic.main.view_title_bar.*
 
-abstract class TitleBarFragment : PaginationListFragment() {
+abstract class TitleBarFragment<Data> : PaginationListFragment<Data>() {
     override val layoutResId: Int = R.layout.fragment_title_bar
     abstract val containerLayoutResId: Int
 

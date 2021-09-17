@@ -1,21 +1,32 @@
 package com.example.test.view.screens.home
 
-import com.example.test.data.dao.PersonDAO
-import com.example.test.data.dao.base.PagingDataDAO
-import com.example.test.view.base.TitleBarSearchFragment
-import com.example.test.view.screens.home.viewBinder.ContactItemViewBinder
+import android.os.Bundle
+import android.view.View
+import com.example.test.R
+import com.example.test.view.base.StateFragment
+import kotlinx.android.synthetic.main.fragment_home.*
+import org.koin.android.ext.android.getKoin
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.qualifier.named
 
-class HomeFragment : TitleBarSearchFragment(), IHomeView {
-    override val presenter: HomePresenter = HomePresenter(this, searchForm)
-    override fun showContacts(pageData: PagingDataDAO<PersonDAO>) {
-        val viewBinders = pageData.data?.map { contactToDisplay ->
-            ContactItemViewBinder(this, contactToDisplay)
-        } ?: listOf()
-
-        showListItems(
-            viewBinders = viewBinders,
-            appendList = searchForm.page > 0,
-            hasMore = pageData.hasMore()
+class HomeFragment : StateFragment<Any>() {
+    override val layoutResId: Int = R.layout.fragment_home
+    override val viewModel: HomeViewModel by viewModel()
+    private val loginFlowScope by lazy {
+        getKoin().getOrCreateScope(
+            "loginFlow",
+            named("LoginFlowData")
         )
+    }
+    private val loginFlowData: LoginFlowData by loginFlowScope.inject()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        tvDesc.text = getString(R.string.lb_welcome, loginFlowData.email)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        loginFlowScope.closed
     }
 }

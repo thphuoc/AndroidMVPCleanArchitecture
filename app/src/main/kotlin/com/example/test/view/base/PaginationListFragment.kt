@@ -12,7 +12,7 @@ import com.example.test.view.exts.buildStateInitLayout
 import com.example.test.view.exts.buildStateLoadingLayout
 import kotlinx.android.synthetic.main.fragment_state_list.*
 
-abstract class PaginationListFragment : StateFragment() {
+abstract class PaginationListFragment<Data> : StateFragment<Data>() {
     override val layoutResId: Int = R.layout.fragment_state_list
 
     /**
@@ -37,7 +37,7 @@ abstract class PaginationListFragment : StateFragment() {
             placeHolderView.noMoreToLoad()
             searchForm.page = 0
             setupLoadMore()
-            presenter.loadData()
+            viewModel.loadData()
         }
         setupLoadMore()
     }
@@ -45,7 +45,7 @@ abstract class PaginationListFragment : StateFragment() {
     private fun setupLoadMore() {
         placeHolderView?.setLoadMoreResolver(LoadMoreViewBinder {
             searchForm.page++
-            presenter.loadData()
+            viewModel.loadData()
         })
     }
 

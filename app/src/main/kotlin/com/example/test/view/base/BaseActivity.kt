@@ -15,7 +15,7 @@ import io.reactivex.plugins.RxJavaPlugins
 
 abstract class BaseActivity : AppCompatActivity() {
     private val layoutId: Int = R.layout.activity_base
-    abstract val rootFragment : StateFragment
+    abstract val rootFragment : StateFragment<*>
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {

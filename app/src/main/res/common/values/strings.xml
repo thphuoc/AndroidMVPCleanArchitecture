@@ -6,4 +6,6 @@
     <string name="lb_no_result_search">No data</string>
     <string name="hint_input_keyword_search">Input somethings to search</string>
     <string name="lb_loading">Loading...</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_otp_code">Otp Code</string>
 </resources>

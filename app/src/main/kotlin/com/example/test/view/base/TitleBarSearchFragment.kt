@@ -8,7 +8,7 @@ import com.example.test.R
 import com.example.test.view.exts.goBack
 import kotlinx.android.synthetic.main.view_header_search.*
 
-abstract class TitleBarSearchFragment : PaginationListFragment(), IView {
+abstract class TitleBarSearchFragment<Data> : PaginationListFragment<Data>() {
     override val layoutResId: Int = R.layout.fragment_search
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -17,7 +17,7 @@ abstract class TitleBarSearchFragment : PaginationListFragment(), IView {
         edtSearch?.addTextChangedListener {
             searchForm.searchText = edtSearch.text.toString()
             searchForm.page = 0
-            presenter.loadData()
+            viewModel.loadData()
         }
     }
 

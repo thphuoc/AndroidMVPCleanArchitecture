@@ -13,11 +13,8 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.example.test.R
 import com.example.test.view.exts.goBack
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.dialog_error.view.*
 import kotlinx.android.synthetic.main.fragment_base.*
-import java.io.File
 
 /**
  * StateFragment is a base fragment handle for 5 generic UI states
@@ -27,12 +24,11 @@ import java.io.File
  * 4. On has data -> show content view
  * 5. On Error when load data at the first time -> show error view
  */
-abstract class StateFragment : Fragment(), IView {
+abstract class StateFragment<Data> : Fragment() {
     open val layoutResId: Int = R.layout.fragment_base
     lateinit var unBinder: Unbinder
     private var loadingDialog: MaterialDialog? = null
-    private val disposables = CompositeDisposable()
-    abstract val presenter: BasePresenter
+    abstract val viewModel: BaseViewModel<Data>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,33 +42,66 @@ abstract class StateFragment : Fragment(), IView {
         return contentView
     }
 
-    override fun showLoadingView() {
+    open fun showLoadingView() {
         stateLayout?.showProgress()
     }
 
-    override fun showEmptyView() {
+    open fun showEmptyView() {
         stateLayout?.showEmpty()
     }
 
-    override fun showErrorView(message: String) {
+    open fun showErrorView(message: String) {
         stateLayout?.showError(message)
     }
 
-    override fun showContentView() {
+    open fun showContentView() {
         stateLayout?.showContent()
     }
 
-    override fun showInitView() {
+    open fun showInitView() {
         stateLayout?.showOffline()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.init()
+        viewModel.init()
+
+        viewModel.viewStateLiveData.observe(viewLifecycleOwner, { viewState ->
+            handleViewState(viewState)
+        })
+
+        viewModel.navigatorState.observe(viewLifecycleOwner, { navigator ->
+            hideLoadingDialog()
+            when (navigator.screen) {
+                ScreenEnum.GO_BACK -> goBack()
+                else -> navigate(navigator)
+            }
+        })
     }
 
-    override fun addDisposable(disposable: Disposable) {
-        disposables.add(disposable)
+    open fun handleViewState(viewState: ViewState<Data>) {
+        hideLoadingDialog()
+        when (viewState.viewState) {
+            ViewStateEnum.INIT -> showInitView()
+            ViewStateEnum.PAGE_LOADING -> showLoadingView()
+            ViewStateEnum.DIALOG_LOADING -> showLoadingDialog()
+            ViewStateEnum.ERROR -> showErrorDialog(
+                message = viewState.errorMessage,
+                cancelable = false,
+                onYes = {},
+                onDismiss = {})
+            ViewStateEnum.NO_DATA -> showEmptyView()
+            else -> {
+                showContentView()
+                showData(viewState.data)
+            }
+        }
+    }
+
+    open fun showData(data: Data?) {
+    }
+
+    open fun navigate(viewNavigator: ViewNavigator) {
     }
 
     fun fitStatusBar(view: View) {
@@ -95,11 +124,7 @@ abstract class StateFragment : Fragment(), IView {
         }
     }
 
-    override fun getDataDir(): File {
-        return File(requireContext().applicationInfo.dataDir)
-    }
-
-    override fun showErrorDialog(
+    open fun showErrorDialog(
         message: String,
         cancelable: Boolean,
         onYes: () -> Unit,
@@ -121,7 +146,7 @@ abstract class StateFragment : Fragment(), IView {
         }
     }
 
-    override fun showLoadingDialog() {
+    open fun showLoadingDialog() {
         loadingDialog?.let {
             if (!it.isShowing) {
                 it.show()
@@ -131,14 +156,12 @@ abstract class StateFragment : Fragment(), IView {
         }
     }
 
-    override fun hideLoadingDialog() {
+    open fun hideLoadingDialog() {
         loadingDialog?.dismiss()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        disposables.dispose()
-        disposables.clear()
         unBinder.unbind()
         hideLoadingDialog()
     }
@@ -159,7 +182,7 @@ abstract class StateFragment : Fragment(), IView {
         return result
     }
 
-    override fun backPrevious() {
+    open fun backPrevious() {
         goBack()
     }
 }

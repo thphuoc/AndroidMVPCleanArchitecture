@@ -1,7 +1,8 @@
 package com.example.test.exts
 
 import com.example.test.data.apimgr.exceptions.InvalidAccessTokenException
-import com.example.test.view.base.IView
+import com.example.test.view.base.BaseViewModel
+import com.example.test.view.base.ViewStateEnum
 import io.reactivex.Completable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -9,23 +10,23 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 fun <S> Single<S>.observe(
-    view: IView,
+    view: BaseViewModel<*>,
     showLoadingDialog: Boolean = true,
     onSuccess: (it: S) -> Unit = {},
     onError: (throwable: Throwable) -> Unit = { throwable -> handleError(view, throwable) }
 ): Disposable {
     if (showLoadingDialog) {
-        view.showLoadingDialog()
+        view.publishState(viewState = ViewStateEnum.DIALOG_LOADING)
     }
     val disposable = this.subscribeOn(Schedulers.newThread())
         .observeOn(AndroidSchedulers.mainThread()).subscribe({
             if (showLoadingDialog) {
-                view.hideLoadingDialog()
+                view.publishState(viewState = ViewStateEnum.SHOW_DATA)
             }
             onSuccess(it)
         }, {
             if (showLoadingDialog) {
-                view.hideLoadingDialog()
+                view.publishState(viewState = ViewStateEnum.SHOW_DATA)
             }
             onError(it)
         })
@@ -34,7 +35,7 @@ fun <S> Single<S>.observe(
     return disposable
 }
 
-private fun handleError(context: IView, throwable: Throwable) {
+private fun handleError(view: BaseViewModel<*>, throwable: Throwable) {
     var showError = true
     throwable.printStackTrace()
     if (throwable is InvalidAccessTokenException) {
@@ -46,37 +47,24 @@ private fun handleError(context: IView, throwable: Throwable) {
         }
     }
     if (showError) {
-        context.showErrorDialog(
-            message = throwable.message ?: "",
-            onYes = {},
-            onDismiss = {
-            }
-        )
+        view.publishState(ViewStateEnum.ERROR, throwable.message ?: "")
     }
 }
 
 fun Completable.observe(
-    view: IView,
+    view: BaseViewModel<*>,
     showLoadingDialog: Boolean = true,
     onCompleted: () -> Unit = {},
     onError: (throwable: Throwable) -> Unit = { throwable -> handleError(view, throwable) }
 ) {
     if (showLoadingDialog) {
-        view.showLoadingDialog()
+        view.publishState(ViewStateEnum.DIALOG_LOADING)
     }
+    val disposable = this.subscribeOn(Schedulers.newThread())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe({ onCompleted() }, { onError(it) })
+
     view.addDisposable(
-        this.subscribeOn(Schedulers.newThread())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                if (showLoadingDialog) {
-                    view.hideLoadingDialog()
-                }
-                onCompleted()
-            }, {
-                if (showLoadingDialog) {
-                    view.hideLoadingDialog()
-                }
-                onError(it)
-            })
+        disposable
     )
 }

@@ -12,7 +12,7 @@ android {
         targetSdkVersion 29
         vectorDrawables.useSupportLibrary = true
         manifestPlaceholders = [appName: "AndroidMVPCleanArchitecture"]
-        buildConfigField "String", "API_SERVICE_URL", "\"https://reqres.in/\""
+        buildConfigField "String", "API_SERVICE_URL", "\" http://demo9972855.mockable.io\""
 
         vectorDrawables.useSupportLibrary = true
 
@@ -123,9 +123,9 @@ android {
         main {
             res.srcDirs = [
                     'src/main/res/common',
-                    'src/main/res/login',
-                    'src/main/res/home',
-                    'src/main/res/contact'
+                    'src/main/res/email',
+                    'src/main/res/otp',
+                    'src/main/res/home'
             ]
             assets.srcDirs = ['src/main/assets']
             java.srcDirs = ['src/main/kotlin']
@@ -206,6 +206,8 @@ dependencies {
 
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.2.0'
+
     //Retrofit2
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
@@ -220,4 +222,9 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     testImplementation "org.mockito:mockito-core:3.+"
+    testImplementation 'org.mockito:mockito-inline:3.1.0'
+    testImplementation "com.google.truth:truth:0.36"
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    androidTestImplementation 'androidx.arch.core:core-testing:2.1.0'
+
 }
