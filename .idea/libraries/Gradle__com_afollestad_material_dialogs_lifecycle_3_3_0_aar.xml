@@ -2,9 +2,11 @@
   <library name="Gradle: com.afollestad.material-dialogs:lifecycle:3.3.0@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7af03318f783abbd6bb023d03c0bbe1d/transformed/jetified-lifecycle-3.3.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0c0f455d9f6f4124bf1b12848c92d401/transformed/jetified-lifecycle-3.3.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0c0f455d9f6f4124bf1b12848c92d401/transformed/jetified-lifecycle-3.3.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0c0f455d9f6f4124bf1b12848c92d401/transformed/jetified-lifecycle-3.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f63bc5c8eaf409a9c28f91b511c7ee3c/transformed/jetified-lifecycle-3.3.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/069d5ea6392a9f987a585172cf2ca98c/transformed/jetified-lifecycle-3.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/069d5ea6392a9f987a585172cf2ca98c/transformed/jetified-lifecycle-3.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/069d5ea6392a9f987a585172cf2ca98c/transformed/jetified-lifecycle-3.3.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.afollestad.material-dialogs/lifecycle/3.3.0/e3439cf06b3fd8bdb7f10c56bc502d82f0857557/lifecycle-3.3.0-javadoc.jar!/" />

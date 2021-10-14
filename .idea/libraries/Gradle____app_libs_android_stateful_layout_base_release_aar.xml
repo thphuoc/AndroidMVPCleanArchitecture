@@ -2,9 +2,11 @@
   <library name="Gradle: ./app/libs/android-stateful-layout-base-release.aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4b8add9c278a65b3b338daab2a505977/transformed/jetified-android-stateful-layout-base-release/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7f669e7edd7bff79b9b99868549daeec/transformed/jetified-android-stateful-layout-base-release/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7f669e7edd7bff79b9b99868549daeec/transformed/jetified-android-stateful-layout-base-release/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7f669e7edd7bff79b9b99868549daeec/transformed/jetified-android-stateful-layout-base-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3cad8639b4def252ba5a365cba0c3a3a/transformed/jetified-android-stateful-layout-base-release/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/80a692e749f150c6bfde4d12e198efdf/transformed/jetified-android-stateful-layout-base-release/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/80a692e749f150c6bfde4d12e198efdf/transformed/jetified-android-stateful-layout-base-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/80a692e749f150c6bfde4d12e198efdf/transformed/jetified-android-stateful-layout-base-release/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

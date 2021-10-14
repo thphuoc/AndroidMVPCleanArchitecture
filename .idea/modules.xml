@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidMVPCleanArchitecture.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidMVPCleanArchitecture.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidMVPCleanArchitecture.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidMVPCleanArchitecture.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidMVVMCleanArchitecture.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidMVVMCleanArchitecture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidMVVMCleanArchitecture.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidMVVMCleanArchitecture.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/AndroidMVVMCleanArchitecture.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/AndroidMVVMCleanArchitecture.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/AndroidMVVMCleanArchitecture.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/AndroidMVVMCleanArchitecture.domain.iml" />
     </modules>
   </component>
 </project>

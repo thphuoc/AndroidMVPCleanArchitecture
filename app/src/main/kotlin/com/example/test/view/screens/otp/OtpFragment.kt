@@ -3,8 +3,8 @@ package com.example.test.view.screens.otp
 import butterknife.OnClick
 import butterknife.OnTextChanged
 import com.example.test.R
-import com.example.test.data.form.VerifyOtpForm
-import com.example.test.utils.Validator
+import com.phuoc.domain.form.VerifyOtpForm
+import com.phuoc.domain.utils.Validator
 import com.example.test.view.base.ScreenEnum
 import com.example.test.view.base.StateFragment
 import com.example.test.view.base.ViewNavigator
@@ -15,12 +15,12 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class OtpFragment : StateFragment<Any>() {
     override val layoutResId: Int = R.layout.fragment_otp
-    private val otpForm by lazy { VerifyOtpForm() }
+    private val otpForm by lazy { com.phuoc.domain.form.VerifyOtpForm() }
     override val viewModel: OtpViewModel by viewModel()
 
     @OnTextChanged(R.id.edtOtp)
     fun onTextChanged() {
-        btnSubmit.isEnabled = Validator.isOtpPattern(edtOtp.text.toString())
+        btnSubmit.isEnabled = com.phuoc.domain.utils.Validator.isOtpPattern(edtOtp.text.toString())
     }
 
     @OnClick(R.id.btnSubmit)

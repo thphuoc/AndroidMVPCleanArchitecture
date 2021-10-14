@@ -5,8 +5,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
-import com.example.test.data.form.RequestOtpForm
-import com.example.test.data.usecases.RequestOtpUseCase
+import com.phuoc.domain.form.RequestOtpForm
+import com.phuoc.domain.usecases.RequestOtpUseCase
 import com.example.test.view.base.ScreenEnum
 import com.example.test.view.base.ViewNavigator
 import com.example.test.view.base.ViewState
@@ -39,7 +39,7 @@ class EmailViewModelTest {
     @Mock
     lateinit var lifecycleOwner: LifecycleOwner
 
-    lateinit var useCase: RequestOtpUseCase
+    lateinit var useCase: com.phuoc.domain.usecases.RequestOtpUseCase
     lateinit var viewModel: EmailViewModel
 
     @Before
@@ -49,13 +49,13 @@ class EmailViewModelTest {
         lifecycle.markState(Lifecycle.State.RESUMED)
         Mockito.`when`(lifecycleOwner.lifecycle).thenReturn(lifecycle)
 
-        useCase = Mockito.mock(RequestOtpUseCase::class.java)
+        useCase = Mockito.mock(com.phuoc.domain.usecases.RequestOtpUseCase::class.java)
         viewModel = EmailViewModel(useCase)
     }
 
     @Test
     fun `test email invalid pattern expect throw exception`() {
-        val input = RequestOtpForm("12345")
+        val input = com.phuoc.domain.form.RequestOtpForm("12345")
         val completable = Completable.error(Exception("Email invalid"))
         Mockito.`when`(useCase.execute(input)).thenReturn(completable)
 
@@ -70,7 +70,7 @@ class EmailViewModelTest {
 
     @Test
     fun `test email valid expect navigate to OTP page`() {
-        val input = RequestOtpForm("abc@positivethinking.tech")
+        val input = com.phuoc.domain.form.RequestOtpForm("abc@positivethinking.tech")
         val completable = Completable.complete()
         Mockito.`when`(useCase.execute(input)).thenReturn(completable)
 

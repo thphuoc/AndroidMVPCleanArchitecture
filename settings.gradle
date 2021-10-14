@@ -1,2 +1,5 @@
-rootProject.name = "AndroidMVPCleanArchitecture"
+rootProject.name = "AndroidMVVMCleanArchitecture"
 include ':app'
+include ':domain'
+include ':data'
+//include ':navigator'

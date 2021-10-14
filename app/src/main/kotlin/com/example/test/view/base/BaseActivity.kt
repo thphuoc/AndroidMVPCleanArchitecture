@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test.R
-import com.example.test.data.apimgr.exceptions.InvalidAccessTokenException
+import com.phuoc.domain.exceptions.InvalidAccessTokenException
 import io.reactivex.exceptions.CompositeException
 import io.reactivex.exceptions.UndeliverableException
 import io.reactivex.plugins.RxJavaPlugins

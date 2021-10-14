@@ -2,9 +2,11 @@
   <library name="Gradle: ./app/libs/placeholderview-release.aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0de151e315764e56d42267c154a43add/transformed/jetified-placeholderview-release/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0a45444ceba4e84dbb956441fcd6e10e/transformed/jetified-placeholderview-release/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0a45444ceba4e84dbb956441fcd6e10e/transformed/jetified-placeholderview-release/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0a45444ceba4e84dbb956441fcd6e10e/transformed/jetified-placeholderview-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2091fc99e814498c69c1fbfe3602c1e2/transformed/jetified-placeholderview-release/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/380ba692f0f67359af7ac950db6de293/transformed/jetified-placeholderview-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/380ba692f0f67359af7ac950db6de293/transformed/jetified-placeholderview-release/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/380ba692f0f67359af7ac950db6de293/transformed/jetified-placeholderview-release/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

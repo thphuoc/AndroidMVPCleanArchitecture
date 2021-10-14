@@ -1,9 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.jakewharton.rxbinding2:rxbinding:2.2.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3f5acfce82058c851a19ded2f541c9c8/transformed/jetified-rxbinding-2.2.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3f5acfce82058c851a19ded2f541c9c8/transformed/jetified-rxbinding-2.2.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3f5acfce82058c851a19ded2f541c9c8/transformed/jetified-rxbinding-2.2.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/48948286c3cd0de9499bd837036268cb/transformed/jetified-rxbinding-2.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bb49c8613b68f1a8c36824492bd44eb4/transformed/jetified-rxbinding-2.2.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bb49c8613b68f1a8c36824492bd44eb4/transformed/jetified-rxbinding-2.2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/bb49c8613b68f1a8c36824492bd44eb4/transformed/jetified-rxbinding-2.2.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton.rxbinding2/rxbinding/2.2.0/2451ae574a8c45f839f95290ab58975ee469ca03/rxbinding-2.2.0-javadoc.jar!/" />

@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.test.R
-import com.example.test.data.form.SearchForm
+import com.phuoc.domain.form.SearchForm
 import com.example.test.view.base.viewBinder.LoadMoreViewBinder
 import com.example.test.view.exts.buildStateEmptyLayout
 import com.example.test.view.exts.buildStateInitLayout
@@ -21,7 +21,7 @@ abstract class PaginationListFragment<Data> : StateFragment<Data>() {
     open val initStateIconResId = R.drawable.ic_empty_search
     open val initStateTextResId = R.string.hint_input_search
 
-    val searchForm by lazy { SearchForm() }
+    val searchForm by lazy { com.phuoc.domain.form.SearchForm() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
