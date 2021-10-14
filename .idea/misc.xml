@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/home/layout/fragment_home.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/login/layout/fragment_login.xml" value="0.2462962962962963" />
         <entry key="app/src/main/res/otp/layout/fragment_otp.xml" value="0.25" />
+        <entry key="app/src/main/res/splash/layout/fragment_splash.xml" value="0.22407407407407406" />
       </map>
     </option>
   </component>

@@ -1,7 +1,0 @@
-<resources>
-    <string name="hint_email">Email</string>
-    <string name="hint_otp">Otp (demo valid OTP: 1234)</string>
-    <string name="lb_email_title">Welcome to TDD Testing</string>
-    <string name="lb_email_valid_desc">Email domain: @positivethinking.tech</string>
-    <string name="lb_otp_valid_desc">OTP must be 4 digits</string>
-</resources>

@@ -122,8 +122,8 @@ android {
         main {
             res.srcDirs = [
                     'src/main/res/common',
-                    'src/main/res/email',
-                    'src/main/res/otp',
+                    'src/main/res/splash',
+                    'src/main/res/login',
                     'src/main/res/home'
             ]
             assets.srcDirs = ['src/main/assets']

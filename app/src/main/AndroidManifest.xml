@@ -13,7 +13,7 @@
         android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.example.test.view.screens.email.EmailActivity">
+        <activity android:name=".view.screens.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,6 +22,7 @@
         </activity>
         <activity android:name="com.example.test.view.screens.otp.OtpActivity" />
         <activity android:name=".view.screens.home.HomeActivity" />
+        <activity android:name=".view.screens.login.LoginActivity" />
     </application>
 
 </manifest>
