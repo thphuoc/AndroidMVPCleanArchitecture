@@ -29,4 +29,31 @@ class HomeFragment : StateFragment<Any>() {
         super.onDestroy()
         loginFlowScope.closed
     }
+
+    fun test(a:Int, array: Array<Int>) : Int {
+        if(a !in array.indices) {
+            return -1
+        }
+        return array.sortedArray()[a]
+    }
+
+    fun test1(array: Array<Int>) : List<Int> {
+        val newList = arrayListOf<Int>()
+        newList.addAll(array.filter { it%2==0 })
+        newList.addAll(array.filter { it%2==1 })
+        return newList
+    }
+
+    fun findLowestMultiplied(array: Array<Int>) : Int {
+        val sortedArray = array.sortedArray()
+        if(array.isEmpty()) return 0
+        if(array.size == 1) return array[0]
+        if(array.size == 2) return array[0] * array[1]
+
+        return if(sortedArray.any {it < 0}) {
+            sortedArray[0] * sortedArray[sortedArray.size-1]
+        } else {
+            sortedArray[0] * sortedArray[1]
+        }
+    }
 }

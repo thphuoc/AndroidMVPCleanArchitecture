@@ -49,4 +49,9 @@ class RequestOtpUseCaseTest {
         val exception = verifyOtpUseCase.execute(input).blockingGet()
         assert(exception == null)
     }
+
+
+    fun test(k: Int, array: Array<Int>) {
+
+    }
 }
