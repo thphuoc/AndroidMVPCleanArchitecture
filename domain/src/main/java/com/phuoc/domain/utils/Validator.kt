@@ -2,10 +2,10 @@ package com.phuoc.domain.utils
 
 object Validator {
     fun isEmailPattern(email: String): Boolean {
-        return email.endsWith("@positivethinking.tech") && email.split("@").size == 2
+        return email.isNotBlank()
     }
 
-    fun isOtpPattern(otp: String): Boolean {
-        return otp.length == 4
+    fun isValidPassword(password: String) : Boolean {
+        return password.matches(Regex("[a-zA-Z0-9]{6,}"))
     }
 }

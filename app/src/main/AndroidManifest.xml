@@ -3,16 +3,24 @@
     package="com.example.test">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
-        android:name="com.example.test.RootApplication"
+        android:name=".RootApplication"
         android:icon="@mipmap/ic_launcher"
-        android:label="PositiveThinking"
+        android:label="DriverTracking"
         android:logo="@mipmap/ic_launcher"
         android:networkSecurityConfig="@xml/network_security_config"
         android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".view.screens.locationService.TrackingService"
+            android:enabled="true"
+            android:exported="true"/>
+
         <activity android:name=".view.screens.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.test.view.screens.otp.OtpActivity" />
         <activity android:name=".view.screens.home.HomeActivity" />
         <activity android:name=".view.screens.login.LoginActivity" />
+        <activity android:name=".view.screens.forgot_password.ForgotPasswordActivity" />
+        <activity android:name=".view.screens.reset_password.ResetPasswordActivity" />
     </application>
 
 </manifest>

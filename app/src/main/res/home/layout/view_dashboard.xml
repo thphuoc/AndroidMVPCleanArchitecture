@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvVehicle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_selector"
+        android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:hint="Select vehicle"
+        android:padding="@dimen/contain_padding" />
+
+    <TextView
+        android:id="@+id/tvErrorVehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please select vehicle"
+        android:textColor="@color/red"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvSchedulers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/contain_padding"
+        android:background="@drawable/input_selector"
+        android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:hint="Select Schedulers"
+        android:padding="@dimen/contain_padding" />
+
+    <TextView
+        android:id="@+id/tvErrorScheduler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please select scheduler"
+        android:textColor="@color/red"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/contain_padding" />
+
+    <TextView
+        android:id="@+id/tvTrackingStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Start Tracking" />
+</androidx.appcompat.widget.LinearLayoutCompat>

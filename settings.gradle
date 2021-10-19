@@ -2,4 +2,4 @@ rootProject.name = "AndroidMVVMCleanArchitecture"
 include ':app'
 include ':domain'
 include ':data'
-//include ':navigator'
+//include ':theme_core'

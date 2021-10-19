@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lb_associate">Associate</string>
+    <string name="lb_bachelor">Bachelor</string>
+    <string name="lb_master">Master</string>
+    <string name="lb_doctoral">Doctoral</string>
+    <string name="lb_online">Online</string>
+    <string name="lb_education_none">None</string>
+
+    <string name="lb_marital_status_single">Single</string>
+    <string name="lb_marital_status_married">Married</string>
+
+    <string name="lb_update_profile_gender_male">Male</string>
+    <string name="lb_update_profile_gender_female">Female</string>
+    <string name="lb_update_profile_gender_other">Other</string>
+</resources>

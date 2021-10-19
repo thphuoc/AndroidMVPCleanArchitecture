@@ -1,11 +1,13 @@
 package com.example.test.view.base
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import butterknife.ButterKnife
 import butterknife.Unbinder
@@ -13,8 +15,11 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.example.test.R
 import com.example.test.view.exts.goBack
+import com.example.test.view.screens.login.LoginActivity
+import com.phuoc.domain.usecases.IClearLoginSessionUseCase
 import kotlinx.android.synthetic.main.dialog_error.view.*
 import kotlinx.android.synthetic.main.fragment_base.*
+import org.koin.android.ext.android.inject
 
 /**
  * StateFragment is a base fragment handle for 5 generic UI states
@@ -65,6 +70,9 @@ abstract class StateFragment<Data> : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.init()
+        viewModel.messageStateLiveData.observe(viewLifecycleOwner, { message ->
+            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        })
 
         viewModel.viewStateLiveData.observe(viewLifecycleOwner, { viewState ->
             handleViewState(viewState)
@@ -74,6 +82,10 @@ abstract class StateFragment<Data> : Fragment() {
             hideLoadingDialog()
             when (navigator.screen) {
                 ScreenEnum.GO_BACK -> goBack()
+                ScreenEnum.LOGOUT -> {
+                    clearLoginCache()
+                    gotoLoginPage()
+                }
                 else -> navigate(navigator)
             }
         })
@@ -85,17 +97,21 @@ abstract class StateFragment<Data> : Fragment() {
             ViewStateEnum.INIT -> showInitView()
             ViewStateEnum.PAGE_LOADING -> showLoadingView()
             ViewStateEnum.DIALOG_LOADING -> showLoadingDialog()
-            ViewStateEnum.ERROR -> showErrorDialog(
-                message = viewState.errorMessage,
-                cancelable = false,
-                onYes = {},
-                onDismiss = {})
+            ViewStateEnum.ERROR -> showError(viewState)
             ViewStateEnum.NO_DATA -> showEmptyView()
             else -> {
                 showContentView()
                 showData(viewState.data)
             }
         }
+    }
+
+    open fun showError(viewState: ViewState<Data>) {
+        showErrorDialog(
+            message = viewState.errorMessage,
+            cancelable = false,
+            onYes = {},
+            onDismiss = {})
     }
 
     open fun showData(data: Data?) {
@@ -112,6 +128,19 @@ abstract class StateFragment<Data> : Fragment() {
     fun fitNavigationBar(view: View) {
         val bottomMargin = getBottomNavHeight()
         (view.layoutParams as? ViewGroup.MarginLayoutParams)?.bottomMargin = bottomMargin
+    }
+
+    private fun gotoLoginPage() {
+        val intent = Intent(activity, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        activity?.overridePendingTransition(R.anim.left_in, R.anim.right_out)
+        activity?.finishAfterTransition()
+    }
+
+    fun clearLoginCache() {
+        val clearLoginSessionUseCase: IClearLoginSessionUseCase by inject()
+        clearLoginSessionUseCase.execute()
     }
 
     private fun showLoading(context: Context): MaterialDialog {

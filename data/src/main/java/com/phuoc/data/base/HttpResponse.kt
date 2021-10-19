@@ -4,21 +4,19 @@ import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
 @Keep
-open class HttpResponse<E>(default: E? = null, defaultStatus: Int = 200) {
+open class HttpResponse<E>(default: E? = null, defaultStatus: String = "success") {
     @SerializedName("status")
-    var status: Int? = defaultStatus
+    var status: String? = defaultStatus
 
     @SerializedName("message")
     val message: String? = null
 
+    @SerializedName("errors")
+    val errors: Map<String, List<String>>? = null
+
     @SerializedName("data")
     val data: E? = default
 
-    fun isUnauthorized(): Boolean = status == STATUS_CODE_UNAUTHORIZED
-    fun isSuccess(): Boolean = status  == STATUS_CODE_SUCCEED
-
-    companion object {
-        private const val STATUS_CODE_SUCCEED = 200
-        private const val STATUS_CODE_UNAUTHORIZED = 401
-    }
+    fun isUnauthorized(): Boolean = message == "Invalid Credentials"
+    fun isSuccess(): Boolean = status  == "success"
 }

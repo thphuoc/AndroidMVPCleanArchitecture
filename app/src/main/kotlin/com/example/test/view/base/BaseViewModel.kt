@@ -9,6 +9,7 @@ open class BaseViewModel<Data> : ViewModel() {
 
     var state = ViewState<Data>()
     val viewStateLiveData = MutableLiveData<ViewState<Data>>()
+    val messageStateLiveData = MutableLiveData<String>()
     val navigatorState = MutableLiveData<ViewNavigator>()
     private val disposables = CompositeDisposable()
 
@@ -24,6 +25,10 @@ open class BaseViewModel<Data> : ViewModel() {
     open fun publishState(viewState: ViewStateEnum, message: String? = null) {
         state = state.copy(viewState = viewState, errorMessage = message ?: state.errorMessage)
         viewStateLiveData.postValue(state)
+    }
+
+    fun showToast(message: String) {
+        messageStateLiveData.postValue(message)
     }
 
     fun navigate(navigate: ViewNavigator) {

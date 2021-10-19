@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">AndroidTest</string>
     <string name="btn_ok">Ok</string>
+    <string name="btn_no">No</string>
+    <string name="btn_yes">Yes</string>
     <string name="hint_input_search">Search</string>
     <string name="lb_no_result_search">No data</string>
     <string name="hint_input_keyword_search">Input somethings to search</string>

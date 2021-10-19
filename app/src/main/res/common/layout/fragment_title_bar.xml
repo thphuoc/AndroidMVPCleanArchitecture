@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         app:elevation="0dp">
 
-        <include layout="@layout/view_title_bar" />
+        <include layout="@layout/view_home_title_bar" />
 
         <View
             android:layout_width="match_parent"

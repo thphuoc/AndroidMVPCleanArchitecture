@@ -1,6 +1,7 @@
 package com.example.test.view.base
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test.R
+import com.example.test.view.screens.login.LoginActivity
 import com.phuoc.domain.exceptions.InvalidAccessTokenException
 import io.reactivex.exceptions.CompositeException
 import io.reactivex.exceptions.UndeliverableException
@@ -32,7 +34,7 @@ abstract class BaseActivity : AppCompatActivity() {
             }
             cause?.let { errorCause ->
                 if (errorCause is InvalidAccessTokenException) {
-                    //Should be logout when token invalid
+                    gotoLoginPage()
                 }
             }
         }
@@ -48,6 +50,14 @@ abstract class BaseActivity : AppCompatActivity() {
             .commitAllowingStateLoss()
 
 
+    }
+
+    fun gotoLoginPage() {
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        overridePendingTransition(R.anim.left_in, R.anim.right_out)
+        finishAfterTransition()
     }
 
     override fun onBackPressed() {

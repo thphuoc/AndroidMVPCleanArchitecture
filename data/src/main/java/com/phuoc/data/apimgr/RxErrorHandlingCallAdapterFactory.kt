@@ -9,7 +9,6 @@ import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.functions.Function
-import io.reactivex.plugins.RxJavaPlugins
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.HttpException
@@ -73,22 +72,24 @@ internal class RxErrorHandlingCallAdapterFactory private constructor() : CallAda
                     val response = throwable.response()
                     val bodyAsString = response?.errorBody()?.string() ?: ""
                     try {
+
+                        if(response?.code() == 401) {
+                            throw InvalidAccessTokenException()
+                        }
+
                         val responseModel = Gson().fromJson(
                             bodyAsString, HttpResponse::class.java
                         )
 
-                        return when {
-                            responseModel.isUnauthorized() -> {
-                                RxJavaPlugins.onError(InvalidAccessTokenException())
-                                InvalidAccessTokenException()
-                            }
-                            else -> {
-                                RemoteException(
-                                    response?.code() ?: 0,
-                                    "Sorry!! Something went wrong. We're working hard to resolve it."
-                                )
-                            }
+                        var message = responseModel.message
+                        if (!responseModel.errors.isNullOrEmpty()) {
+                            message = responseModel.errors.entries.first().value.firstOrNull()
                         }
+
+                        return RemoteException(
+                            response?.code() ?: 0,
+                            message ?: responseModel.toString()
+                        )
                     } catch (e: Exception) {
                         if (BuildConfig.DEBUG) {
                             RemoteException(

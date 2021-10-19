@@ -14,3 +14,13 @@ fun <I> Single<HttpResponse<I>>.transformCompletable(onResult: (data: I) -> Unit
         }
     }
 }
+
+fun <I> Single<HttpResponse<I>>.transformData(): Single<I> {
+    return this.flatMap { response ->
+        if (response.isSuccess() && response.data != null) {
+            Single.just(response.data)
+        } else {
+            throw Exception(response.message ?: "")
+        }
+    }
+}

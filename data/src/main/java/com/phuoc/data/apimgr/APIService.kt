@@ -20,7 +20,7 @@ class APIService private constructor() {
             mLoggable = loggable
         }
 
-        fun <T> build(clazz: Class<T>):T {
+        fun <T> build(clazz: Class<T>): T {
             return apiService.buildService(BuildConfig.API_SERVICE_URL, clazz)
         }
     }
@@ -39,8 +39,8 @@ class APIService private constructor() {
                         Locale.getDefault().language
                     )
                     addHeader(
-                        "AccessToken",
-                        mAccessToken
+                        "Authorization",
+                        "Bearer $mAccessToken"
                     )
                     this
                 }.build()

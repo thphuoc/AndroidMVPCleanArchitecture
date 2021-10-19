@@ -2,10 +2,10 @@
 <resources>
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#E2E2E2</color>
-    <color name="colorSecondary">#CC0178FF</color>
-    <color name="colorSecondaryLight">#B30178FF</color>
+    <color name="colorSecondary">#CCBF0016</color>
+    <color name="colorSecondaryLight">#B3BF0016</color>
     <color name="colorSecondaryVeryLight">#84CEFB</color>
-    <color name="colorSecondaryDark">#026CE4</color>
+    <color name="colorSecondaryDark">#BF0016</color>
     <color name="btnDisableColor">#DDD</color>
     <color name="colorActive">#4CAF50</color>
     <color name="transparent">#00000000</color>

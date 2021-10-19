@@ -15,14 +15,95 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/vertical_space_xlarge"
         android:text="Driver Login"
-        android:textColor="@color/red"
+        android:textColor="@color/textColorRed"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgLogo" />
 
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="@dimen/contain_padding"
+        android:layout_marginTop="@dimen/vertical_space_medium"
+        android:layout_marginEnd="@dimen/contain_padding"
+        app:emptyAllowed="false"
+        app:emptyErrorString="Please input username"
+        android:background="@drawable/input_selector"
+        android:hint="Username"
+        android:paddingStart="@dimen/contain_padding"
+        android:paddingEnd="@dimen/contain_padding"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <com.andreabaccega.widget.FormEditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="@dimen/contain_padding"
+        android:layout_marginTop="@dimen/vertical_space_medium"
+        android:layout_marginEnd="@dimen/contain_padding"
+        app:customRegexp="([a-zA-Z0-9]){6,}"
+        app:emptyErrorString="Please input password"
+        app:testErrorString="Password must at least 6 letters"
+        android:background="@drawable/input_selector"
+        android:hint="Password"
+        app:emptyAllowed="false"
+        android:inputType="textPassword"
+        android:paddingStart="@dimen/contain_padding"
+        android:paddingEnd="@dimen/contain_padding"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtEmail" />
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical_space_small"
+        android:text="Invalid email"
+        android:textColor="@color/red"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/edtPassword"
+        app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+    <TextView
+        android:id="@+id/tvForgotPassword"
+        android:layout_width="wrap_content"
+        android:paddingTop="@dimen/contain_padding"
+        android:paddingBottom="@dimen/contain_padding"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/contain_padding"
+        android:layout_marginTop="@dimen/vertical_space_medium"
+        android:layout_marginEnd="@dimen/contain_padding"
+        android:text="Forgot Password"
+        android:textColor="@color/textColorDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtPassword"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/contain_padding"
+        android:layout_marginTop="@dimen/contain_padding"
+        android:layout_marginEnd="@dimen/contain_padding"
+        android:background="@drawable/btn_selector"
+        android:text="Login"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>

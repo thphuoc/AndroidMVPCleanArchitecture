@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="Input query (required)"
+        android:padding="@dimen/contain_padding" />
+
+    <cz.kinst.jakub.view.SimpleStatefulLayout
+        android:id="@+id/stateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/edtSearch">
+
+        <com.mindorks.placeholderview.InfinitePlaceHolderView
+            android:id="@+id/placeHolderView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </cz.kinst.jakub.view.SimpleStatefulLayout>
+</RelativeLayout>

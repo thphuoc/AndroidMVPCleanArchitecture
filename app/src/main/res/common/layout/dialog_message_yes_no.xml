@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:clipToPadding="false"
+    android:padding="@dimen/contain_padding">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/baseBackgroundColor"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:id="@+id/svMessage"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        style="@style/TextSemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/contain_padding"
+                        android:layout_marginTop="@dimen/contain_padding"
+                        android:text="Title"
+                        android:textSize="@dimen/text_size_xlarge" />
+
+                    <TextView
+                        android:id="@+id/tvDialogMessage"
+                        style="@style/TextMedium"
+                        android:layout_marginStart="@dimen/contain_padding"
+                        android:layout_marginTop="@dimen/contain_padding"
+                        android:textColor="@color/textColorDark"
+                        tools:text="Do you want to exit the app?" />
+                </LinearLayout>
+            </ScrollView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/contain_padding"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:padding="@dimen/contain_padding">
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    style="@style/BorderButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_no" />
+
+                <Button
+                    android:id="@+id/btnOk"
+                    style="@style/PrimaryButton"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/contain_padding"
+                    android:layout_weight="1"
+                    android:text="@string/btn_yes" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

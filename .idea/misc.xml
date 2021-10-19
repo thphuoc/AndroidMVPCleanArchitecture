@@ -3,10 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/common/drawable/bg_round_top_corner_white.xml" value="0.2984375" />
+        <entry key="app/src/main/res/common/drawable/btn_border_selector.xml" value="0.2574074074074074" />
+        <entry key="app/src/main/res/common/drawable/btn_primary_selector.xml" value="0.2574074074074074" />
+        <entry key="app/src/main/res/common/drawable/view_simple_list_item.xml" value="0.2984375" />
+        <entry key="app/src/main/res/common/layout/dialog_message_yes_no.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/common/layout/view_simple_list_item.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/common/layout/view_title_bar.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/email/layout/fragment_login.xml" value="0.25" />
+        <entry key="app/src/main/res/forgot_password/layout/fragment_forgot_password.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/home/layout/fragment_home.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/home/layout/view_dashboard.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/home/layout/view_home_content.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/home/layout/view_home_navigation.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/home/layout/view_home_title_bar.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/home/layout/view_search_connection_bottom_sheet.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/home/layout/view_title_bar.xml" value="0.335" />
+        <entry key="app/src/main/res/login/drawable/btn_selector.xml" value="0.2574074074074074" />
+        <entry key="app/src/main/res/login/drawable/input_selector.xml" value="0.2574074074074074" />
         <entry key="app/src/main/res/login/layout/fragment_login.xml" value="0.2462962962962963" />
         <entry key="app/src/main/res/otp/layout/fragment_otp.xml" value="0.25" />
+        <entry key="app/src/main/res/reset_password/layout/fragment_reset_password.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/splash/layout/fragment_splash.xml" value="0.22407407407407406" />
       </map>
     </option>

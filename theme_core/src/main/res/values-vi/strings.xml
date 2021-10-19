@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lb_associate">Cao đẳng</string>
+    <string name="lb_bachelor">Cử nhân</string>
+    <string name="lb_master">Thạc sĩ</string>
+    <string name="lb_doctoral">Tiến sĩ</string>
+    <string name="lb_online">Đào tạo từ xa</string>
+    <string name="lb_education_none">Không có</string>
+
+    <string name="lb_marital_status_single">Độc thân</string>
+    <string name="lb_marital_status_married">Đã có gia đình</string>
+
+    <string name="lb_update_profile_gender_male">Nam</string>
+    <string name="lb_update_profile_gender_female">Nữ</string>
+    <string name="lb_update_profile_gender_other">Khác</string>
+</resources>
