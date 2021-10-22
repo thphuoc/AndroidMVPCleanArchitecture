@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
@@ -14,12 +15,12 @@
         android:layout_marginTop="@dimen/contain_padding"
         android:gravity="center"
         android:padding="@dimen/contain_padding"
-        android:text="@string/hint_input_keyword_search"
+        android:text=""
         android:textColor="@color/textColorLightWhite" />
 
     <ImageView
         android:id="@+id/imgEmpty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_empty_search" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_bus"/>
 </LinearLayout>

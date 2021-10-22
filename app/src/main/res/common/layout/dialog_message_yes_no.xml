@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:cardPreventCornerOverlap="true">
 
@@ -57,25 +57,28 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/contain_padding"
                 android:clipToPadding="false"
-                android:orientation="horizontal"
-                android:padding="@dimen/contain_padding">
+                android:gravity="right"
+                android:orientation="horizontal">
 
-                <Button
+                <TextView
                     android:id="@+id/btnCancel"
-                    style="@style/BorderButton"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/btn_no" />
+                    style="@style/TextBold"
+                    android:layout_width="wrap_content"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="@dimen/contain_padding"
+                    android:text="@string/btn_no"
+                    android:textColor="@color/textColorLight" />
 
-                <Button
+                <TextView
                     android:id="@+id/btnOk"
-                    style="@style/PrimaryButton"
-                    android:layout_width="0dp"
+                    style="@style/TextBold"
+                    android:layout_width="wrap_content"
                     android:layout_marginStart="@dimen/contain_padding"
-                    android:layout_weight="1"
-                    android:text="@string/btn_yes" />
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="@dimen/contain_padding"
+                    android:text="@string/btn_yes"
+                    android:textColor="@color/colorSecondaryDark" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

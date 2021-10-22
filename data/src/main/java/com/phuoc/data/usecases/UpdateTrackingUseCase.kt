@@ -11,6 +11,7 @@ class UpdateTrackingUseCase(private val service: ITrackingService) : IUpdateTrac
         lat: Double,
         lng: Double
     ): Completable {
-        return service.updateTracking(trackingId, lat, lng).transformCompletable()
+        return service.updateTracking(trackingId, lat, lng)
+            .transformCompletable()
     }
 }

@@ -1,5 +1,4 @@
 package com.phuoc.domain.exceptions
 
-import java.lang.Exception
-
-open class RemoteException(val code: Int, message: String) : Exception(message)
+open class RemoteException(val code: Int = 0, var title: String = "", message: String) :
+    Exception(message)

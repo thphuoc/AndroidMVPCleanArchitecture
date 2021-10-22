@@ -73,7 +73,7 @@ internal class RxErrorHandlingCallAdapterFactory private constructor() : CallAda
                     val bodyAsString = response?.errorBody()?.string() ?: ""
                     try {
 
-                        if(response?.code() == 401) {
+                        if (response?.code() == 401) {
                             throw InvalidAccessTokenException()
                         }
 
@@ -87,25 +87,25 @@ internal class RxErrorHandlingCallAdapterFactory private constructor() : CallAda
                         }
 
                         return RemoteException(
-                            response?.code() ?: 0,
-                            message ?: responseModel.toString()
+                            code = response?.code() ?: 0,
+                            message = message ?: responseModel.toString()
                         )
                     } catch (e: Exception) {
                         if (BuildConfig.DEBUG) {
                             RemoteException(
-                                response?.code() ?: 0,
-                                e.message ?: e.toString()
+                                code = response?.code() ?: 0,
+                                message = e.message ?: e.toString()
                             )
                         } else {
                             RemoteException(
-                                response?.code() ?: 0,
-                                "Oops!"
+                                code = response?.code() ?: 0,
+                                message = "Oops!"
                             )
                         }
                     }
                 }
 
-                else -> RemoteException(0, "Oops!")
+                else -> RemoteException(code = 0, message = "Oops!")
             }
         }
     }

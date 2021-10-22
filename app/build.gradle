@@ -11,7 +11,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 25
         vectorDrawables.useSupportLibrary = true
-        manifestPlaceholders = [appName: "DriverTracking"]
+        manifestPlaceholders = [appName: "KKRTC Driver App"]
 
         vectorDrawables.useSupportLibrary = true
 

@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="3dp"
         app:cardElevation="5dp"
         app:cardPreventCornerOverlap="true">
 
@@ -21,22 +21,34 @@
             android:layout_height="match_parent"
             android:background="@color/baseBackgroundColor"
             android:clipToPadding="false"
-            android:orientation="vertical"
-            android:padding="@dimen/contain_padding">
+            android:orientation="vertical">
 
             <ScrollView
                 android:id="@+id/svMessage"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="0dp">
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        style="@style/TextBold"
+                        android:layout_width="match_parent"
+                        android:paddingStart="@dimen/contain_padding"
+                        android:paddingTop="@dimen/contain_padding"
+                        android:paddingEnd="@dimen/contain_padding"
+                        android:textColor="@color/textColorDark"
+                        tools:text="" />
 
                     <TextView
                         android:id="@+id/tvDialogMessage"
                         style="@style/TextMedium"
+                        android:layout_width="match_parent"
+                        android:padding="@dimen/contain_padding"
                         android:textColor="@color/textColorDark"
                         tools:text="Do you want to exit the app?" />
                 </LinearLayout>
@@ -44,12 +56,16 @@
 
             <TextView
                 android:id="@+id/btnDialogPositive"
-                style="@style/PrimaryButton"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
+                style="@style/TextSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginTop="@dimen/vertical_space_xlarge"
+                android:layout_marginEnd="@dimen/contain_padding"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:padding="@dimen/contain_padding"
                 android:textAllCaps="true"
+                android:textColor="@color/colorSecondary"
                 android:visibility="visible"
                 tools:text="Ok" />
         </LinearLayout>

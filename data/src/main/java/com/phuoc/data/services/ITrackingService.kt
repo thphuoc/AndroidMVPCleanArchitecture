@@ -25,8 +25,7 @@ interface ITrackingService {
         @Field("longitude") longitude: Double
     ): Single<HttpResponse<Any>>
 
-    @FormUrlEncoded
-    @PUT("api/v1/driver/tracking/{tracking_id}/end")
+    @POST("api/v1/driver/tracking/{tracking_id}/end")
     @Headers("Accept: application/json")
     fun stopTracking(@Path("tracking_id") tracking_id: Int): Single<HttpResponse<Any>>
 }

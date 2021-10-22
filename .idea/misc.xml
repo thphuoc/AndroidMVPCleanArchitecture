@@ -7,8 +7,10 @@
         <entry key="app/src/main/res/common/drawable/btn_border_selector.xml" value="0.2574074074074074" />
         <entry key="app/src/main/res/common/drawable/btn_primary_selector.xml" value="0.2574074074074074" />
         <entry key="app/src/main/res/common/drawable/view_simple_list_item.xml" value="0.2984375" />
+        <entry key="app/src/main/res/common/layout/dialog_error.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/common/layout/dialog_message_yes_no.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/common/layout/view_simple_list_item.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/common/layout/view_state_init.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/common/layout/view_title_bar.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/email/layout/fragment_login.xml" value="0.25" />
         <entry key="app/src/main/res/forgot_password/layout/fragment_forgot_password.xml" value="0.28229166666666666" />

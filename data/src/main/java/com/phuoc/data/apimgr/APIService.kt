@@ -1,31 +1,27 @@
 package com.phuoc.data.apimgr
 
 import com.phuoc.data.BuildConfig
+import com.phuoc.domain.usecases.IGetCacheSessionUseCase
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 
-class APIService private constructor() {
-    companion object {
-        private var mAccessToken = ""
-        private var mLoggable = false
-        private var apiService = APIService()
-        fun setAccessToken(accessToken: String) {
-            mAccessToken = accessToken
-        }
+class APIService(private val getCacheSessionUseCase: IGetCacheSessionUseCase) {
 
-        fun setLoggable(loggable: Boolean) {
-            mLoggable = loggable
-        }
+    private var mLoggable = false
 
-        fun <T> build(clazz: Class<T>): T {
-            return apiService.buildService(BuildConfig.API_SERVICE_URL, clazz)
-        }
+    fun setLoggable(loggable: Boolean) {
+        mLoggable = loggable
     }
 
-    private fun <T> buildService(baseUrl: String, serviceClazz: Class<T>): T {
+    fun <T> build(clazz: Class<T>): T {
+        return buildService(BuildConfig.API_SERVICE_URL, clazz)
+    }
+
+    fun <T> buildService(baseUrl: String, serviceClazz: Class<T>): T {
+        val mAccessToken = getCacheSessionUseCase.execute()?.token ?: ""
         val httpClientBuilder = OkHttpClient.Builder()
         httpClientBuilder.followRedirects(false)
         httpClientBuilder.followSslRedirects(false)

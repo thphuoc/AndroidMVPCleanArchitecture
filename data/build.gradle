@@ -15,7 +15,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
-        buildConfigField "String", "API_SERVICE_URL", "\"https://nekrtc-demo.cloudjiffy.net/\""
+        buildConfigField "String", "API_SERVICE_URL", "\"http://nekrtc-demo.cloudjiffy.net/\""
     }
 
     buildTypes {
