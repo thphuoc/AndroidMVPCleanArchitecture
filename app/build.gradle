@@ -9,7 +9,7 @@ android {
     defaultConfig {
         multiDexEnabled true
         minSdkVersion 23
-        targetSdkVersion 25
+        targetSdkVersion 30
         vectorDrawables.useSupportLibrary = true
         manifestPlaceholders = [appName: "KKRTC Driver App"]
 
