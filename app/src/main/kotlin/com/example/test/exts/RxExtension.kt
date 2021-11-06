@@ -1,7 +1,7 @@
 package com.example.test.exts
 
-import com.example.test.view.base.BaseViewModel
-import com.example.test.view.base.ViewStateEnum
+import com.phuoc.base.view.BaseViewModel
+import com.phuoc.base.view.ViewStateEnum
 import com.phuoc.domain.exceptions.InvalidAccessTokenException
 import io.reactivex.Completable
 import io.reactivex.Observable

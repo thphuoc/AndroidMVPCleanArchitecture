@@ -152,6 +152,7 @@ android {
 }
 
 dependencies {
+    implementation project(':core')
     implementation project(':domain')
     implementation project(':data')
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
@@ -188,12 +189,19 @@ dependencies {
     implementation 'jp.wasabeef:picasso-transformations:2.4.0'
 
     //PlaceHolderView
-    kapt files("libs/placeholderview-compiler-1.0.3.jar")
+//    kapt files("libs/placeholderview-compiler-1.0.3.jar")
     implementation 'com.squareup:javapoet:1.13.0'
+
+    implementation 'com.mindorks.placeholderview2.annotations:placeholderview:1.0.4'
+    implementation 'com.mindorks.placeholderview2.annotations:placeholderview-annotations:1.0.4'
+    kapt 'com.mindorks.placeholderview2.annotations:placeholderview-compiler:1.0.4'
 
     //Butterknife
     implementation 'com.jakewharton:butterknife:10.2.3'
     kapt 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    implementation 'cz.kinst.jakub:android-stateful-layout-base:2.0.7'
+
 
     //Progress Indicator
     implementation 'com.wang.avi:library:2.1.3'

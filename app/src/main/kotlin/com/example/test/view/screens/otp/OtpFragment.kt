@@ -3,12 +3,10 @@ package com.example.test.view.screens.otp
 import butterknife.OnClick
 import butterknife.OnTextChanged
 import com.example.test.R
-import com.phuoc.domain.form.VerifyOtpForm
-import com.phuoc.domain.utils.Validator
-import com.example.test.view.base.ScreenEnum
-import com.example.test.view.base.StateFragment
-import com.example.test.view.base.ViewNavigator
-import com.example.test.view.exts.goNext
+import com.phuoc.base.view.ScreenEnum
+import com.phuoc.base.view.StateFragment
+import com.phuoc.base.view.ViewNavigator
+import com.phuoc.base.exts.goNext
 import com.example.test.view.screens.home.HomeActivity
 import kotlinx.android.synthetic.main.fragment_otp.*
 import org.koin.androidx.viewmodel.ext.android.viewModel

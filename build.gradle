@@ -31,6 +31,14 @@ allprojects {
         flatDir {
             dirs 'libs'
         }
+
+        maven {
+            url = uri("https://maven.pkg.github.com/thphuoc/PlaceHolderview")
+            credentials {
+                username = "thphuoc"
+                password = "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"
+            }
+        }
     }
 }
 

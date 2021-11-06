@@ -3,7 +3,7 @@ package com.example.test.view.screens.home
 import android.os.Bundle
 import android.view.View
 import com.example.test.R
-import com.example.test.view.base.StateFragment
+import com.phuoc.base.view.StateFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.ext.android.getKoin
 import org.koin.androidx.viewmodel.ext.android.viewModel

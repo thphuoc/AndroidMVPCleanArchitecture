@@ -5,12 +5,11 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
-import com.phuoc.domain.form.RequestOtpForm
 import com.phuoc.domain.usecases.RequestOtpUseCase
-import com.example.test.view.base.ScreenEnum
-import com.example.test.view.base.ViewNavigator
-import com.example.test.view.base.ViewState
-import com.example.test.view.base.ViewStateEnum
+import com.phuoc.base.view.ScreenEnum
+import com.phuoc.base.view.ViewNavigator
+import com.phuoc.base.view.ViewState
+import com.phuoc.base.view.ViewStateEnum
 import com.example.test.view.screens.email.EmailViewModel
 import io.reactivex.Completable
 import org.junit.Assert

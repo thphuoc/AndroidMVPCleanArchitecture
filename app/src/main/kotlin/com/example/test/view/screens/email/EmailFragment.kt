@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.View
 import butterknife.OnClick
 import com.example.test.R
-import com.example.test.view.base.ScreenEnum
-import com.example.test.view.base.StateFragment
-import com.example.test.view.base.ViewNavigator
-import com.example.test.view.exts.goNext
+import com.phuoc.base.view.ScreenEnum
+import com.phuoc.base.view.StateFragment
+import com.phuoc.base.view.ViewNavigator
+import com.phuoc.base.exts.goNext
 import com.example.test.view.screens.home.LoginFlowData
 import com.example.test.view.screens.otp.OtpActivity
 import com.jakewharton.rxbinding2.widget.RxTextView

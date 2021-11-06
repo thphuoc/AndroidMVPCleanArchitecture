@@ -1,7 +1,7 @@
 package com.example.test.view.screens.otp
 
 import com.example.test.exts.observe
-import com.example.test.view.base.*
+import com.phuoc.base.view.*
 import com.phuoc.data.usecases.VerifyOtpUseCase
 
 class OtpViewModel(private val useCase: VerifyOtpUseCase) : BaseViewModel<Any>() {

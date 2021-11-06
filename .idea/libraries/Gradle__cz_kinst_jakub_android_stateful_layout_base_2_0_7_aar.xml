@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: cz.kinst.jakub:android-stateful-layout-base:2.0.7@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/63a6743aa904fe4b64b5f37bae1bc044/transformed/jetified-android-stateful-layout-base-2.0.7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/63a6743aa904fe4b64b5f37bae1bc044/transformed/jetified-android-stateful-layout-base-2.0.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/63a6743aa904fe4b64b5f37bae1bc044/transformed/jetified-android-stateful-layout-base-2.0.7/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cz.kinst.jakub/android-stateful-layout-base/2.0.7/b746eb78a8ac58b92a8ee1883d963dd6e5708484/android-stateful-layout-base-2.0.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cz.kinst.jakub/android-stateful-layout-base/2.0.7/2c4a6742d0b91bfb46fb0f991faa7898ecf981e6/android-stateful-layout-base-2.0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
